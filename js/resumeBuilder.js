@@ -43,8 +43,8 @@ var work = {
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
         }
         ],
-    "display":function(){
-        for (job in work.jobs) {
+    "display": function () {
+        for (var job in work.jobs) {
             $("#workExperience").append(HTMLworkStart);
             var formatEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
             var formatTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -110,8 +110,8 @@ var projects = {
             "description": "My Udacity Resume Page"
       }
   ],
-    "display":function () {
-        for (project in projects.projects) {
+    "display": function () {
+        for (var project in projects.projects) {
             $("#projects").append(HTMLprojectStart);
             var formatTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
             $(".project-entry:last").append(formatTitle);
