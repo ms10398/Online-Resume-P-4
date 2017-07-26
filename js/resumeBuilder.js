@@ -56,6 +56,8 @@ var work = {
 
             var formatDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
             $(".work-entry:last").append(formatDescription);
+            var formatLocation = HTMLworkLocation.replace("%data%",work.jobs[job].location);
+            $(".work-entry:last").append(formatLocation)l
         }
     }
 };
