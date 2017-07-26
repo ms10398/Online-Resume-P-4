@@ -12,7 +12,7 @@ var bio = {
     "skills": ["HTML5", "CSS3", "Javascript", "PHP", "Java"],
     "biopic": "images/profile.jpg",
     "display": function () {
-        $("#header").prepend(HTMLbiopic.replace("%data%", bio.bioPic));
+        $("#header").prepend(HTMLbiopic.replace("%data%", bio.biopic));
         $("#header").prepend(HTMLheaderName.replace("%data%", bio.name), HTMLheaderRole.replace("%data%", bio.role));
         $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
         formattedContactInfo = [];
