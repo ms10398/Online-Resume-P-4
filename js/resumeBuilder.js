@@ -10,9 +10,9 @@ var bio = {
     },
     "welcomeMessage": "Work hard till your name is an autograph",
     "skills": ["HTML5", "CSS3", "Javascript", "PHP", "Java"],
-    "bioPic": "images/profile.jpg",
+    "biopic": "images/profile.jpg",
     "display": function () {
-        $("#header").prepend(HTMLbioPic.replace("%data%", bio.bioPic));
+        $("#header").prepend(HTMLbiopic.replace("%data%", bio.bioPic));
         $("#header").prepend(HTMLheaderName.replace("%data%", bio.name), HTMLheaderRole.replace("%data%", bio.role));
         $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
         formattedContactInfo = [];
@@ -44,17 +44,17 @@ var work = {
         }
         ],
     "display": function () {
-        for (var job in work.jobs) {
+        for (var job=0;job<work.jobs.length;job++) {
             $("#workExperience").append(HTMLworkStart);
-            var formatEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-            var formatTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+            var formatEmployer = HTMLworkEmployer.replace("%data%", work.jobs.[job].employer);
+            var formatTitle = HTMLworkTitle.replace("%data%", work.jobs.[job].title);
             var formatEmployerTitle = formatEmployer + formatTitle;
             $(".work-entry:last").append(formatEmployerTitle);
 
-            var formatDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+            var formatDates = HTMLworkDates.replace("%data%", work.jobs.[job].dates);
             $(".work-entry:last").append(formatDates);
 
-            var formatDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+            var formatDescription = HTMLworkDescription.replace("%data%", work.jobs.[job].description);
             $(".work-entry:last").append(formatDescription);
         }
     }
@@ -111,13 +111,13 @@ var projects = {
       }
   ],
     "display": function () {
-        for (var project in projects.projects) {
+        for (var project=0;project<projects.projects.length;project++) {
             $("#projects").append(HTMLprojectStart);
-            var formatTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+            var formatTitle = HTMLprojectTitle.replace("%data%", projects.projects.[project].title);
             $(".project-entry:last").append(formatTitle);
-            var formatDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+            var formatDates = HTMLprojectDates.replace("%data%", projects.projects.[project].dates);
             $(".project-entry:last").append(formatDates);
-            var formatDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+            var formatDescription = HTMLprojectDescription.replace("%data%", projects.projects.[project].description);
             $(".project-entry:last").append(formatDescription);
         }
     }
