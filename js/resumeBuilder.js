@@ -68,7 +68,7 @@ var education = {
             "location": "Chandigarh",
             "degree": "Conputer Science Engineering",
             "majors": ["Software"],
-            "date": "2016-2020",
+            "dates": "2016-2020",
             "url": "http://www.chitkara.edu.in"
         }
         ],
@@ -76,7 +76,7 @@ var education = {
         {
             "title": "Front-End Nanodegree",
             "school": "Udacity",
-            "date": "2017",
+            "dates": "2017",
             "url": "http://www.udacity.com"
         }
     ],
@@ -104,12 +104,14 @@ var projects = {
         {
             "title": "Portfolio",
             "dates": "2017",
-            "description": "My Udacity Portfolio Page"
+            "description": "My Udacity Portfolio Page",
+            "images": ["http://placehold.it/300x200"]
       },
         {
             "title": "Resume",
             "dates": "2017",
-            "description": "My Udacity Resume Page"
+            "description": "My Udacity Resume Page",
+            "images": ["http://placehold.it/300x200"]
       }
   ],
     "display": function () {
@@ -121,6 +123,8 @@ var projects = {
             $(".project-entry:last").append(formatDates);
             var formatDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
             $(".project-entry:last").append(formatDescription);
+            for (var image = 0; image < projects.projects[project].images.length; image++)
+	           $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[project].images[image]));
         }
     }
 };
